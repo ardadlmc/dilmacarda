@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Company Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="#">User Guides</a></li>
+                <li><a href="#">Support Portal</a></li>
+            </ul>
+        </aside>
+
+        <main id="main-content">
+            <h1>Welcome to Our Accessible Site</h1>
+            <p>This layout is designed for clarity and ease of use.</p>
+            
+            <button aria-labelledby="btn-label">
+                View Details
+            </button>
+            <span id="btn-label" class="screen-reader-text">Opens a modal with detailed project information</span>
+        </main>
+    </div>
+
+</body>
+</html>
