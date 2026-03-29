@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Accessible Corp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar">
+            <h3>Service Categories</h3>
+            <ul>
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">SEO Audits</a></li>
+                <li><a href="#">Accessibility Consulting</a></li>
+            </ul>
+        </aside>
+
+        <main id="main-content" class="main-area">
+            <h1>Our Services</h1>
+            <p>We provide high-quality digital solutions with a focus on inclusion.</p>
+            
+            <div class="service-item">
+                <h2>Digital Accessibility Audits</h2>
+                <p>We ensure your site meets all <strong>WCAG 2.1</strong> requirements.</p>
+                <button aria-labelledby="audit-desc">Learn More</button>
+                <span id="audit-desc" class="screen-reader-text">Detailed information about our accessibility audit process</span>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
