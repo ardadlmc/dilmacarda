@@ -3,40 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessible Company Portal</title>
+    <title>Accessible Corporate Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
         <nav aria-label="Main Navigation">
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
-        <aside class="sidebar">
-            <h3>Resources</h3>
+    <div class="layout-container">
+        
+        <aside class="sidebar" aria-labelledby="sidebar-title">
+            <h2 id="sidebar-title">Quick Links</h2>
             <ul>
-                <li><a href="#">User Guides</a></li>
-                <li><a href="#">Support Portal</a></li>
+                <li><a href="#">Employee Handbook</a></li>
+                <li><a href="#">Submit a Ticket</a></li>
+                <li><a href="#">Benefits Portal</a></li>
             </ul>
         </aside>
 
-        <main id="main-content">
-            <h1>Welcome to Our Accessible Site</h1>
-            <p>This layout is designed for clarity and ease of use.</p>
-            
-            <button aria-labelledby="btn-label">
-                View Details
-            </button>
-            <span id="btn-label" class="screen-reader-text">Opens a modal with detailed project information</span>
+        <main id="main-content" class="main-area">
+            <h1>Web Accessibility Initiative</h1>
+            <p>
+                Our company is committed to digital inclusion. This project demonstrates 
+                how <strong>CSS and semantic HTML</strong> can be used to create an 
+                experience that works for everyone, regardless of ability.
+            </p>
+
+            <section>
+                <h2>Project Requirements</h2>
+                <p>
+                    Check out our latest <a href="#">Accessibility Documentation</a> to learn 
+                    more about our WCAG 2.1 compliance goals.
+                </p>
+                
+                <div class="action-group">
+                    <button class="btn-primary" aria-labelledby="hidden-btn-desc">
+                        Download Report
+                    </button>
+                    <span id="hidden-btn-desc" class="screen-reader-text">
+                        Download the 2024 Accessibility Compliance Report in PDF format (2.4MB).
+                    </span>
+                </div>
+            </section>
         </main>
+
     </div>
+
+    <footer>
+        <p>&copy; 2026 Accessible Tech Corp. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
