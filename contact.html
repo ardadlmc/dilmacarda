@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Accessible Corp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="layout-container">
+        <main id="main-content" class="main-area">
+            <h1>Contact Us</h1>
+            <p>Have questions? Reach out to our team below.</p>
+            
+            <form style="display: flex; flex-direction: column; gap: 15px; max-width: 400px;">
+                <div>
+                    <label for="name">Full Name:</label><br>
+                    <input type="text" id="name" name="name" style="width: 100%; padding: 8px;">
+                </div>
+                <div>
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="email" style="width: 100%; padding: 8px;">
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
