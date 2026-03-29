@@ -1,85 +1,110 @@
-/* 4. Readable Text & High Contrast Defaults */
+/* =========================================
+   4. READABLE TEXT & HIGH CONTRAST 
+   ========================================= */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px; /* Lab Requirement: 16px */
     line-height: 1.6;
-    color: #333;             /* High contrast dark text */
-    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Lab Requirement: #333 text */
+    background-color: #f4f4f4; /* Lab Requirement: #f4f4f4 background */
     margin: 0;
     padding: 0;
 }
 
-/* 1. Clear Navigation & Visual Feedback */
+h1, h2, h3 {
+    color: #222;
+    margin-top: 0;
+}
+
+/* =========================================
+   1. CLEAR NAVIGATION 
+   ========================================= */
 .nav-menu {
     display: flex;
-    list-style: none;
+    list-style: none; /* Lab Requirement: Remove default styling */
     background-color: #2c3e50;
-    padding: 15px 30px;
+    padding: 15px 20px;
     margin: 0;
 }
 
 .nav-menu li {
-    margin-right: 25px;
+    margin-right: 20px; /* Lab Requirement: Spacing between items */
 }
 
 .nav-menu a {
     color: #ffffff;
     text-decoration: none;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 4px;
-    transition: background 0.3s ease;
+    font-weight: bold;
+    display: inline-block;
 }
 
 /* Visual Feedback on Hover/Focus */
 .nav-menu a:hover, 
 .nav-menu a:focus {
     background-color: #34495e;
+    color: #f1c40f; /* Lab Requirement: Visual feedback */
     text-decoration: underline;
-    outline: 3px solid #f39c12; /* CUSTOMIZATION: Clear focus ring */
 }
 
-/* 2. Identifiable Links */
+/* =========================================
+   2. IDENTIFIABLE LINKS 
+   ========================================= */
+/* Lab Requirement: Distinct color and underline */
 a {
-    color: #0056b3;           /* Distinct link color */
-    text-decoration: underline; /* Visual cue for color-blind users */
-    text-underline-offset: 3px;
+    color: #0056b3; 
+    text-decoration: underline; 
+    transition: all 0.2s ease-in-out;
 }
 
-a:hover, a:focus {
+/* Lab Requirement: Color change on hover/focus */
+a:hover, 
+a:focus {
     color: #003d80;
     text-decoration: none;
-    background-color: #e7f1ff;
+    background-color: #e8f0fe;
 }
 
-/* 3. Simple & Predictable Layout (Flexbox) */
+/* =========================================
+   3. SIMPLE AND PREDICTABLE LAYOUTS (FLEXBOX)
+   ========================================= */
 .layout-container {
-    display: flex;
-    flex-wrap: wrap; /* Responsive wrap */
-    max-width: 1200px;
-    margin: 40px auto;
-    gap: 30px;
+    display: flex; /* Lab Requirement: Use Flexbox */
+    max-width: 1100px;
+    margin: 30px auto;
+    gap: 25px;
     padding: 0 20px;
+    min-height: 70vh;
 }
 
 .sidebar {
-    flex: 1;
-    min-width: 250px;
-    background: #fff;
+    flex: 1; /* Sidebar takes 1 part of space */
+    background: #ffffff;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 .main-area {
-    flex: 3;
-    min-width: 300px;
-    background: #fff;
+    flex: 3; /* Main content takes 3 parts of space */
+    background: #ffffff;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
-/* 5. Screen Reader Accessibility (Utility Class) */
+/* Responsive adjustment for mobile */
+@media (max-width: 768px) {
+    .layout-container {
+        flex-direction: column;
+    }
+}
+
+/* =========================================
+   5. SCREEN READER ACCESSIBILITY 
+   ========================================= */
+/* Lab Requirement: Class to hide content visually but keep for SR */
 .screen-reader-text {
     position: absolute;
     width: 1px;
@@ -92,42 +117,58 @@ a:hover, a:focus {
     border: 0;
 }
 
-/* CUSTOMIZATION: Skip Link functionality */
+/* =========================================
+   CUSTOMIZATION: ENHANCED ACCESSIBILITY (25 pts)
+   ========================================= */
+
+/* A. Skip Navigation Link */
 .skip-link {
     position: absolute;
-    top: -100px; /* Hide off-screen */
+    top: -100px;
     left: 10px;
-    background: #f39c12;
+    background: #f1c40f;
     color: #000;
-    padding: 10px 20px;
+    padding: 10px;
+    z-index: 100;
     font-weight: bold;
-    z-index: 1000;
     text-decoration: none;
+    border: 2px solid #000;
 }
 
 .skip-link:focus {
-    top: 10px; /* Bring into view when Tabbed */
+    top: 10px; /* Pops into view when user hits 'Tab' */
 }
 
-/* Button Styling */
+/* B. Global Focus Indicator (High Visibility) */
+/* Ensures keyboard users always see where they are */
+*:focus-visible {
+    outline: 4px solid #f39c12;
+    outline-offset: 2px;
+}
+
+/* C. Accessible Buttons */
 .btn-primary {
     background-color: #2c3e50;
     color: white;
-    padding: 12px 24px;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: bold;
 }
 
-.btn-primary:focus {
-    outline: 4px solid #f39c12;
+.btn-primary:hover {
+    background-color: #1a252f;
 }
 
+/* =========================================
+   FOOTER STYLING 
+   ========================================= */
 footer {
     text-align: center;
-    padding: 40px;
-    font-size: 0.9rem;
-    color: #666;
+    padding: 40px 20px;
+    background-color: #eee;
+    margin-top: 40px;
+    font-size: 14px;
 }
